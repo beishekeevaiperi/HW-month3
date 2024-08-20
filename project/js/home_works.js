@@ -102,3 +102,54 @@ startBtn.onclick = function () {
     }
     }
 }
+    const request = new XMLHttpRequest();
+    request.open('GET', `../data/persons.json`)
+    request.setRequestHeader('Content-type', 'application/json')
+    request.send()
+    request.addEventListener('load', () => {
+        const data = JSON.parse(request.response);
+        console.log(data)
+    })
+
+
+
+
+
+
+
+// // Автоматический слайдер
+// let slideIndex = 0;
+// const slides = document.querySelectorAll('.slide');
+
+// function showSlides() {
+//     slides.forEach(slide => slide.style.display = 'none'); // Скрыть все слайды
+//     slideIndex++;
+//     if (slideIndex > slides.length) { slideIndex = 1; }
+//     slides[slideIndex - 1].style.display = 'block'; // Показать текущий слайд
+// }
+
+// setInterval(showSlides, 3000); // Переключение слайдов каждые 3 секунды
+
+// showSlides(); // Показать первый слайд
+
+// // Модальное окно при скролле до конца страницы
+// const modal = document.getElementById('modal');
+// let isModalShown = false;
+
+// function showModalOnScroll() {
+//     if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !isModalShown) {
+//         modal.style.display = 'block';
+//         isModalShown = true;
+//         window.removeEventListener('scroll', showModalOnScroll); // Удаление обработчика после первого вызова
+//     }
+// }
+
+// window.addEventListener('scroll', showModalOnScroll);
+
+// // Открытие модального окна через 10 секунд после загрузки страницы
+// setTimeout(() => {
+//     if (!isModalShown) {
+//         modal.style.display = 'block';
+//         isModalShown = true;
+//     }
+// }, 10000);
